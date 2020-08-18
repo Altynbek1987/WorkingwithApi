@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.example.workingwithapi.ui.home.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/navigation_dashboard"
+        android:name="com.example.workingwithapi.ui.dashboard.DashboardFragment"
+        android:label="@string/title_dashboard"
+        tools:layout="@layout/fragment_dashboard" />
+
+    <fragment
+        android:id="@+id/navigation_notifications"
+        android:name="com.example.workingwithapi.ui.notifications.NotificationsFragment"
+        android:label="@string/title_notifications"
+        tools:layout="@layout/fragment_notifications" />
+    <fragment
+        android:id="@+id/newsFragment"
+        android:name="com.example.workingwithapi.ui.home.NewsFragment"
+        android:label="fragment_news"
+        tools:layout="@layout/fragment_news" />
+    <fragment
+        android:id="@+id/catFragment"
+        android:name="com.example.workingwithapi.ui.home.CatFragment"
+        android:label="fragment_cat"
+        tools:layout="@layout/fragment_cat" />
+    <fragment
+        android:id="@+id/filmFragment"
+        android:name="com.example.workingwithapi.ui.home.FilmFragment"
+        android:label="fragment_film"
+        tools:layout="@layout/fragment_film" />
+    <fragment
+        android:id="@+id/infoCatFragment"
+        android:name="com.example.workingwithapi.ui.home.info.InfoCatFragment"
+        android:label="fragment_info_cat"
+        tools:layout="@layout/fragment_info_cat" />
+    <fragment
+        android:id="@+id/infoFilmFragment"
+        android:name="com.example.workingwithapi.ui.home.info.InfoFilmFragment"
+        android:label="fragment_info_film"
+        tools:layout="@layout/fragment_info_film" />
+    <fragment
+        android:id="@+id/infoNewsFragment"
+        android:name="com.example.workingwithapi.ui.home.info.InfoNewsFragment"
+        android:label="fragment_info_news"
+        tools:layout="@layout/fragment_info_news" />
+</navigation>
