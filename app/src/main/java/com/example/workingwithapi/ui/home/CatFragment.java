@@ -10,6 +10,7 @@ import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -40,12 +41,14 @@ public class CatFragment extends Fragment implements CatApi.CatCallback {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        Log.e("tag", "onCreateViewCatFragment");
         navController = Navigation.findNavController(requireActivity(), R.id.nav_host_fragment);
         return inflater.inflate(R.layout.fragment_cat, container, false);
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        Log.e("tag", " onViewCreatedCatFragment");
         super.onViewCreated(view, savedInstanceState);
         App.apiCat.getListCats(this);
         recyclerViewCat = view.findViewById(R.id.recyclerViewCat);
@@ -53,6 +56,7 @@ public class CatFragment extends Fragment implements CatApi.CatCallback {
 
     @Override
     public void onSuccess(ArrayList<CatM> body) {
+        Log.e("tag", "onSuccessCatFragment");
         list = body;
         adapterCat = new AdapterCat(list);
         adapterCat.notifyDataSetChanged();

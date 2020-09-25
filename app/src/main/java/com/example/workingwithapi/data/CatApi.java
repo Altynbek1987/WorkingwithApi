@@ -53,6 +53,7 @@ public class CatApi {
         call.enqueue(new Callback<CatM>() {
             @Override
             public void onResponse(Call<CatM> call, Response<CatM> response) {
+                Log.e("tag", "getCatTextCatApi");
                 if (response.isSuccessful() && response.body() != null){
                     catCallback.onSuccessCat(response.body());
                 }

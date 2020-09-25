@@ -27,7 +27,7 @@ import java.util.ArrayList;
 
 public class FilmFragment extends Fragment implements GhibliService.GhibliCallback {
 
-    RecyclerView recyclerViewFilm;
+    private RecyclerView recyclerViewFilm;
     private AdapterFilm adapterFilm;
     private ArrayList<FilmM> mList;
     NavController navController;
@@ -53,6 +53,7 @@ public class FilmFragment extends Fragment implements GhibliService.GhibliCallba
     @Override
     public void onSuccess(ArrayList<FilmM> films) {
         Log.e("tag","onSuccess_filmsFragment");
+        Log.e("ololo","films from DB" + App.appDatabase.filmDao().getAllFilms());
         mList = films;
         adapterFilm = new AdapterFilm(mList);
         recyclerViewFilm.addItemDecoration(new DividerItemDecoration(requireContext(), DividerItemDecoration.HORIZONTAL));
@@ -68,8 +69,7 @@ public class FilmFragment extends Fragment implements GhibliService.GhibliCallba
                 navController.navigate(R.id.infoFilmFragment,bundle);
             }
         });
-
-        //adapterFilm.notifyDataSetChanged();
+        App.appDatabase.filmDao().insertFilm(films.get(0));
 
     }
 

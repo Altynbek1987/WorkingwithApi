@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.workingwithapi.App;
@@ -22,6 +23,7 @@ import java.util.ArrayList;
 public class InfoFilmFragment extends Fragment implements GhibliService.GhibliCallback {
     private TextView filmName, filmDeck,filmDirector,filmProducer,filmReleaseDate,filmScore,
             info_release,score,name_director,name_producer;
+    private Button btnSave;
     private FilmM filmM;
 
     public InfoFilmFragment() {
@@ -40,7 +42,6 @@ public class InfoFilmFragment extends Fragment implements GhibliService.GhibliCa
         return inflater.inflate(R.layout.fragment_info_film, container, false);
     }
 
-
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
@@ -55,7 +56,9 @@ public class InfoFilmFragment extends Fragment implements GhibliService.GhibliCa
         score = view.findViewById(R.id.score);
         name_director = view.findViewById(R.id.name_director);
         name_producer = view.findViewById(R.id.name_producer);
+        btnSave = view.findViewById(R.id.btn_save);
 
+        //App.appDatabase.filmDao().insertFilm(filmM);
     }
 
     @Override

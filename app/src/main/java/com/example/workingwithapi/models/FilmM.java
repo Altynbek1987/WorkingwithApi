@@ -1,25 +1,20 @@
 package com.example.workingwithapi.models;
 
+import androidx.annotation.NonNull;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 import java.io.Serializable;
 import java.util.List;
 
+@Entity
 public class FilmM {
-    public FilmM(int getImageName) {
-        this.getImageName = getImageName;
-    }
 
-    public int getGetImageName() {
-        return getImageName;
-    }
-
-    public void setGetImageName(int getImageName) {
-        this.getImageName = getImageName;
-    }
-
-    public int getImageName;
+    @PrimaryKey
+    @NonNull
     @SerializedName("id")
     @Expose
     private String id;
@@ -48,29 +43,29 @@ public class FilmM {
     @Expose
     private String rtScore;
 
-    @SerializedName("people")
-    @Expose
-    private List<String> people = null;
-
-    @SerializedName("species")
-    @Expose
-    private List<String> species = null;
-
-    @SerializedName("locations")
-    @Expose
-    private List<String> locations = null;
-
-    @SerializedName("vehicles")
-    @Expose
-    private List<String> vehicles = null;
-
-    @SerializedName("url")
-    @Expose
-    private String url;
-
-    @SerializedName("length")
-    @Expose
-    private Object length;
+//    @SerializedName("people")
+//    @Expose
+//    private List<String> people = null;
+//
+//    @SerializedName("species")
+//    @Expose
+//    private List<String> species = null;
+//
+//    @SerializedName("locations")
+//    @Expose
+//    private List<String> locations = null;
+//
+//    @SerializedName("vehicles")
+//    @Expose
+//    private List<String> vehicles = null;
+//
+//    @SerializedName("url")
+//    @Expose
+//    private String url;
+//
+//    @SerializedName("length")
+//    @Expose
+//    private Object length;
 
 
     public FilmM(String title) {
@@ -133,53 +128,53 @@ public class FilmM {
         this.rtScore = rtScore;
     }
 
-    public List<String> getPeople() {
-        return people;
-    }
-
-    public void setPeople(List<String> people) {
-        this.people = people;
-    }
-
-    public List<String> getSpecies() {
-        return species;
-    }
-
-    public void setSpecies(List<String> species) {
-        this.species = species;
-    }
-
-    public List<String> getLocations() {
-        return locations;
-    }
-
-    public void setLocations(List<String> locations) {
-        this.locations = locations;
-    }
-
-    public List<String> getVehicles() {
-        return vehicles;
-    }
-
-    public void setVehicles(List<String> vehicles) {
-        this.vehicles = vehicles;
-    }
-
-    public String getUrl() {
-        return url;
-    }
-
-    public void setUrl(String url) {
-        this.url = url;
-    }
-
-    public Object getLength() {
-        return length;
-    }
-
-    public void setLength(Object length) {
-        this.length = length;
-    }
+//    public List<String> getPeople() {
+//        return people;
+//    }
+//
+//    public void setPeople(List<String> people) {
+//        this.people = people;
+//    }
+//
+//    public List<String> getSpecies() {
+//        return species;
+//    }
+//
+//    public void setSpecies(List<String> species) {
+//        this.species = species;
+//    }
+//
+//    public List<String> getLocations() {
+//        return locations;
+//    }
+//
+//    public void setLocations(List<String> locations) {
+//        this.locations = locations;
+//    }
+//
+//    public List<String> getVehicles() {
+//        return vehicles;
+//    }
+//
+//    public void setVehicles(List<String> vehicles) {
+//        this.vehicles = vehicles;
+//    }
+//
+//    public String getUrl() {
+//        return url;
+//    }
+//
+//    public void setUrl(String url) {
+//        this.url = url;
+//    }
+//
+//    public Object getLength() {
+//        return length;
+//    }
+//
+//    public void setLength(Object length) {
+//        this.length = length;
+//    }
 
     @Override
     public String toString() {
